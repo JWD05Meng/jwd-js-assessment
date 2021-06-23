@@ -92,12 +92,12 @@ window.addEventListener('DOMContentLoaded', () => {
       a: 0,
     },
     {
-      q: 'Which of the solid shapes shown could be made from the pattern?<img style="margin:0.5rem;width:269px;height:230px;" src="../images/spatial question.png"/>',
+      q: 'Which of the solid shapes shown could be made from the pattern?<img style="margin:0.5rem;width:269px;height:230px;" src="./images/spatial question.png"/>',
       o: [
-        '<img style="width:50%;height:50%;padding-left:2rem;" src="../images/spatial ans A.png">',
-        '<img style="width:50%;height:50%;padding-left:2rem;" src="../images/spatial ans B.png">',
-        '<img style="width:50%;height:50%;padding-left:2rem;" src="../images/spatial ans C.png">',
-        '<img style="width:50%;height:50%;padding-left:2rem;" src="../images/spatial ans D.png">',
+        '<img style="width:50%;height:50%;padding-left:2rem;" src="./images/spatial ans A.png">',
+        '<img style="width:50%;height:50%;padding-left:2rem;" src="./images/spatial ans B.png">',
+        '<img style="width:50%;height:50%;padding-left:2rem;" src="./images/spatial ans C.png">',
+        '<img style="width:50%;height:50%;padding-left:2rem;" src="./images/spatial ans D.png">',
       ],
       a: 3,
     }
