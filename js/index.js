@@ -169,7 +169,7 @@ const randInt = (maxExclusive, min=0) => Math.floor( Math.random() * (maxExclusi
 const insert = (arr, x, i) => { arr.splice(i, 0, x); return arr; } 
 
 // returns a new copy of array [arr] with elements in a random order
-const shuffleArray = arr => arr.reduce((acc, x) => insert(acc, x, randInt(acc.length)), []);
+const shuffleArray = arr => arr.reduce((acc, x) => insert(acc, x, randInt(acc.length+1)), []);
 
 /** shuffles the answers in a quiz array [quizArr]
     updates correct answer
