@@ -20,7 +20,7 @@
 *************************** */
 
 window.addEventListener('DOMContentLoaded', () => {
-  const TIME_LIMIT = 200; // config quiz time limit in seconds
+  const TIME_LIMIT = 90; // config quiz time limit in seconds
 
   // start button
   const start = document.querySelector('#start');
@@ -143,17 +143,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (quizItem.a == i) {
           //change background color of li element here
-          liElement.classList.add('bg-gradient');
-          liElement.classList.add('bg-success');
+          liElement.classList.add('bg-success', 'text-light');
         }
 
         if (radioElement.checked) {
           // code for task 1 goes here
           if (quizItem.a == i) score++;
+          else liElement.classList.add('bg-danger', 'text-light');
         }
       }
     });
-    document.querySelector('#score').innerHTML = `Score: ${score}`;
+    document.querySelector('#score').innerHTML = `Score: ${score} of ${shuffledQuizArray.length}`;
     return score;
   };
 
@@ -171,9 +171,10 @@ const insert = (arr, x, i) => { arr.splice(i, 0, x); return arr; }
 // returns a new copy of array [arr] with elements in a random order
 const shuffleArray = arr => arr.reduce((acc, x) => insert(acc, x, randInt(acc.length)), []);
 
-// shuffles the answers in a quiz array [quizArr]
-// updates correct answer
-// [IMPORTANT] modifies the quiz array [quizArr]
+/** shuffles the answers in a quiz array [quizArr]
+    updates correct answer
+    [IMPORTANT] modifies the quiz array [quizArr]
+*/ 
 const shuffleAnswers = quizArr => {
   for (const questionObj of quizArr) {
     const correctAns = questionObj.o[questionObj.a];
@@ -181,9 +182,3 @@ const shuffleAnswers = quizArr => {
     questionObj.a = questionObj.o.indexOf(correctAns);
   }
 }
-
-
-
-
-
-
