@@ -164,19 +164,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Utilities
 const randInt = (maxExclusive, min=0) => Math.floor( Math.random() * (maxExclusive-min) ) + min;
-const randBool = () => randInt(2) === 1;
-const push = (arr, x) => { arr.push(x); return arr; }
-const unshift = (arr, x) => { arr.unshift(x); return arr; }
-const insert = (arr, x, i) => { arr.splice(i, 0, x); return arr; }
+
+// inserts element [x] into array [arr] at index [i], returns the modified array.
+const insert = (arr, x, i) => { arr.splice(i, 0, x); return arr; } 
+
+// returns a new copy of array [arr] with elements in a random order
 const shuffleArray = arr => arr.reduce((acc, x) => insert(acc, x, randInt(acc.length)), []);
 
+// shuffles the answers in a quiz array [quizArr]
+// updates correct answer
+// [IMPORTANT] modifies the quiz array [quizArr]
 const shuffleAnswers = quizArr => {
   for (const questionObj of quizArr) {
     const correctAns = questionObj.o[questionObj.a];
     questionObj.o = shuffleArray(questionObj.o);
     questionObj.a = questionObj.o.indexOf(correctAns);
   }
-  console.log(quizArr);
 }
 
 
